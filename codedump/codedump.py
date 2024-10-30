@@ -19,10 +19,10 @@ def should_skip(path):
     name_lower = name.lower()
     _, extension = os.path.splitext(name)
     
-    # List of allowed extensions
+    # List of allowed extensions exclude '.txt', '.md',
     allowed_extensions = {
         # General
-        '.txt', '.md', '.markdown', '.json', '.xml', '.yaml', '.yml', '.toml',
+         '.markdown', '.json', '.xml', '.yaml', '.yml', '.toml',
         '.ini', '.cfg', '.conf', '.sql', '.graphql', '.proto',
         # Python
         '.py', '.pyx', '.pyd', '.pyo', '.pyc', '.pyw', '.pyi',
@@ -90,11 +90,11 @@ def should_skip(path):
         '.tex', '.sty', '.cls',
     }
     
-    # List of allowed filenames without extensions
+    # List of allowed filenames without extensions edited out .env, 'license', '.gitignore', 'readme',
     allowed_filenames = {
-        # General
-        'readme', 'license', 'dockerfile', 'makefile', '.gitignore', '.dockerignore',
-        '.editorconfig', '.env', 'requirements.txt', 'package.json', 'tsconfig.json',
+        # General 
+          'dockerfile', 'makefile',  '.dockerignore',
+        '.editorconfig',  'requirements.txt', 'package.json', 'tsconfig.json',
         # Python
         'setup.py', 'setup.cfg', 'pyproject.toml', 'pipfile', 'manifest.in',
         '.pylintrc', '.flake8', 'pytest.ini', 'tox.ini',
@@ -120,7 +120,7 @@ def should_skip(path):
         # Docker
         'docker-compose.yml', 'docker-compose.yaml',
         # Git
-        '.gitattributes',
+        # '.gitattributes',
         # CI/CD
         '.travis.yml', '.gitlab-ci.yml', 'jenkins.file', 'azure-pipelines.yml',
         # Editor/IDE
@@ -165,6 +165,7 @@ def should_skip(path):
         r'\.log(\.[0-9]+)?$',  # Matches .log, .log.1, .log.2, etc.
         r'^log\.',  # Matches log.txt, log.old, etc.
         r'\.bak$',
+        r'\.pickle$',
         r'\.tmp$',
         r'\.temp$',
         r'\.swp$',
