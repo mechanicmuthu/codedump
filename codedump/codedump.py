@@ -167,6 +167,8 @@ def should_skip(path):
         r'\.bak$',
         r'\_bak.$',
         r'_bak\.*$',
+        r'bak\..*$',
+        r'bak\.*$',
         r'^_bak\.*$',
         r'_bak\..*$',
         r'\.pickle$',
