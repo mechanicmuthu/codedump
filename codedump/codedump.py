@@ -166,6 +166,8 @@ def should_skip(path):
         r'^log\.',  # Matches log.txt, log.old, etc.
         r'\.bak$',
         r'\_bak.$',
+        r'_bak\.*$',
+        r'^_bak\.*$',
         r'_bak\..*$',
         r'\.pickle$',
         r'\.tmp$',
